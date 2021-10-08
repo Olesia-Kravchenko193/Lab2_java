@@ -34,10 +34,9 @@ public class Main {
             cube[i].setSide(scanner.nextDouble());
             System.out.println(cube[i].toString());
         }
-        double Area = Task.getMax(cube);
-        System.out.println("Максимальная площадь куба: " + Area);
-//        System.out.println("Кол-во кубов с найбольшей площадью: "+ Cube.NumberOfCubes(cube[Cube.getMax(N2,cube)].AreaCub(),cube));
-        System.out.println("Кол-во кубов с найбольшей площадью: "+ Task.NumberOfCubes(Area,cube));
+        int Area = Task.getMax(cube);
+        System.out.println("Максимальная площадь куба: " + cube[Area].AreaCub());
+        System.out.println("Кол-во кубов с найбольшей площадью: "+ Task.NumberOfCubes(cube[Area].AreaCub(),cube));
     }
 }
 

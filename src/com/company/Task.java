@@ -1,8 +1,10 @@
 package com.company;
-import java.lang.Double;
 
 public class Task {
-    public static int getMax( Cube[] cubes) {
+
+    public static final double Th = 0.000000000001;
+
+    public static int getMax(Cube[] cubes) {
         int max = 0;
         double max_number = 0;
         for (int i = 0; i < cubes.length - 1; i++) {
@@ -17,10 +19,10 @@ public class Task {
         return max;
     }
 
-    public static int NumberOfCubes(double area, Cube[] cubes) {
+    public static int NumberOfCubes(double max_area, Cube[] cubes) {
         int count = 0;
         for (int i = 0; i < cubes.length; i++) {
-            if (Double.compare(cubes[i].AreaCub(), area) == 0) {
+            if (Math.abs(cubes[i].AreaCub()-max_area) <= Th) {
                 count++;
             }
         }
