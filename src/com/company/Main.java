@@ -15,11 +15,11 @@ public class Main {
         for (int i=0; i<N1; i++) {
             square[i] = new Square();
             System.out.print("Сторона квадрата №" + (i + 1) + " а = ");
-            square[i].setA(scanner.nextDouble());
+            square[i].setSide(scanner.nextDouble());
             System.out.println(square[i].toString());
             sum+=square[i].getArea();
         }
-        System.out.println("Средняя площадь квадратов: "+ sum/2+"\n");
+        System.out.println("Средняя площадь квадратов: "+ sum/ square.length+"\n");
 
 
         int N2;
@@ -34,8 +34,10 @@ public class Main {
             cube[i].setSide(scanner.nextDouble());
             System.out.println(cube[i].toString());
         }
-        System.out.println("Максимальная площадь куба: " + cube[Cube.getMax(N2,cube)].AreaCub());
-        System.out.println("Кол-во кубов с найбольшей площадью: "+ Cube.NumberOfCubes(cube[Cube.getMax(N2,cube)].AreaCub(),cube));
+        double Area = Task.getMax(cube);
+        System.out.println("Максимальная площадь куба: " + Area);
+//        System.out.println("Кол-во кубов с найбольшей площадью: "+ Cube.NumberOfCubes(cube[Cube.getMax(N2,cube)].AreaCub(),cube));
+        System.out.println("Кол-во кубов с найбольшей площадью: "+ Task.NumberOfCubes(Area,cube));
     }
 }
 
